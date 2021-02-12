@@ -1,0 +1,199 @@
+#   P H A N T O M S
+ 
+/gate/world/daughters/name                          Mouse
+/gate/world/daughters/insert                        cylinder
+/gate/Mouse/setMaterial                             Polyethylene
+#/gate/Mouse/vis/forceSolid
+#/gate/Mouse/vis/setColor                            white
+#/gate/Mouse/vis/setVisible                          1
+
+/gate/Mouse/geometry/setRmax                        25.0 mm
+/gate/Mouse/geometry/setRmin                        0 mm
+/gate/Mouse/geometry/setHeight                      120.0 mm
+/gate/Mouse/placement/setRotationAxis               1 0 0
+/gate/Mouse/placement/setRotationAngle              90 deg
+
+
+/gate/Mouse/placement/setTranslation        0 0 0 mm
+/gate/Mouse/moves/insert                    translation
+/gate/Mouse/translation/setSpeed            0 0 0 cm/s
+
+/gate/Mouse/daughters/name                      Source
+/gate/Mouse/daughters/insert                    cylinder
+/gate/Source/setMaterial                  Polyethylene
+#/gate/Source/vis/forceSolid
+#/gate/Source/vis/setColor                 cyan
+#/gate/Source/vis/setVisible               1
+
+/gate/Source/geometry/setRmax             6 mm
+/gate/Source/geometry/setRmin             0 mm
+/gate/Source/geometry/setHeight           100 mm
+
+
+
+#   H O L D E R 1 
+/gate/world/daughters/name                          holder1
+/gate/world/daughters/insert                        cylinder
+/gate/holder1/setMaterial                             Aluminium
+#/gate/holder1/vis/forceSolid
+#/gate/holder1/vis/setColor                            grey
+#/gate/holder1/vis/forceWireframe
+#/gate/holder1/vis/setVisible                          1
+
+/gate/holder1/geometry/setRmax                        45.0 mm
+/gate/holder1/geometry/setRmin                        0 mm
+/gate/holder1/geometry/setHeight                      15.0 mm
+/gate/holder1/placement/setRotationAxis               1 0 0
+/gate/holder1/placement/setRotationAngle              90 deg
+
+
+/gate/holder1/placement/setTranslation        0 -67.5 0 mm
+/gate/holder1/moves/insert                    translation
+/gate/holder1/translation/setSpeed            0 0 0 cm/s
+
+#   H O L D E R 1   A I R
+/gate/holder1/daughters/name                          holder1air
+/gate/holder1/daughters/insert                        cylinder
+/gate/holder1air/setMaterial                             Air
+#/gate/holder1air/vis/forceSolid
+#/gate/holder1air/vis/setColor                            white
+#/gate/holder1air/vis/forceWireframe
+#/gate/holder1air/vis/setVisible                          1
+
+/gate/holder1air/geometry/setRmax                        44.0 mm
+/gate/holder1air/geometry/setRmin                        0 mm
+/gate/holder1air/geometry/setHeight                      14.0 mm
+
+
+/gate/holder1air/placement/setTranslation        0 -1 0 mm
+/gate/holder1air/moves/insert                    translation
+/gate/holder1air/translation/setSpeed            0 0 0 cm/s
+
+
+#   H O L D E R 2
+
+/gate/world/daughters/name                          holder2
+/gate/world/daughters/insert                        cylinder
+/gate/holder2/setMaterial                             Plexiglass
+#/gate/holder2/vis/forceSolid
+#/gate/holder2/vis/setColor                            grey
+#/gate/holder2/vis/forceWireframe
+#/gate/holder2/vis/setVisible                          1
+
+/gate/holder2/geometry/setRmax                        55.0 mm
+/gate/holder2/geometry/setRmin                        0 mm
+/gate/holder2/geometry/setHeight                      110.0 mm
+/gate/holder2/placement/setRotationAxis               1 0 0
+/gate/holder2/placement/setRotationAngle              90 deg
+
+
+/gate/holder2/placement/setTranslation        0 -130 0 mm
+/gate/holder2/moves/insert                    translation
+/gate/holder2/translation/setSpeed            0 0 0 cm/s
+
+
+#   H O L D E R 2   A I R
+/gate/holder2/daughters/name                          holder2air
+/gate/holder2/daughters/insert                        cylinder
+/gate/holder2air/setMaterial                             Air
+#/gate/holder2air/vis/forceSolid
+#/gate/holder2air/vis/setColor                            white
+#/gate/holder2air/vis/forceWireframe
+3/gate/holder2air/vis/setVisible                          1
+
+/gate/holder2air/geometry/setRmax                        51.0 mm
+/gate/holder2air/geometry/setRmin                        0 mm
+/gate/holder2air/geometry/setHeight                      102.0 mm
+
+
+/gate/holder2air/placement/setTranslation        0 0 0 mm
+/gate/holder2air/moves/insert                    translation
+/gate/holder2air/translation/setSpeed            0 0 0 cm/s
+
+
+#   T A B L E
+
+/gate/world/daughters/name                          table
+/gate/world/daughters/insert                        box
+/gate/table/setMaterial                             Table
+#/gate/table/vis/forceSolid
+#/gate/table/vis/setColor                            grey
+#/gate/table/vis/forceWireframe
+#/gate/table/vis/setVisible                          1
+
+/gate/table/geometry/setXLength                     600  mm
+/gate/table/geometry/setYLength                     30  mm
+/gate/table/geometry/setZLength                     1500 mm
+
+
+/gate/table/placement/setTranslation        0 -205 0 mm
+/gate/table/moves/insert                    translation
+/gate/table/translation/setSpeed            0 0 0 cm/s
+
+
+
+
+/gate/Mouse/attachPhantomSD
+/gate/Source/attachPhantomSD
+
+/gate/geometry/rebuild
+
+#/vis/viewer/update
+
+# S O U R C E    D E F I N I T I O N #
+
+# Source name can be anything
+/gate/source/addSource                              F18_1
+/gate/source/F18_1/gps/pos/type                         Volume
+/gate/source/F18_1/gps/pos/shape                        Cylinder
+/gate/source/F18_1/gps/pos/radius                       6. mm
+/gate/source/F18_1/gps/pos/halfz                        50. mm
+
+/gate/source/F18_1/gps/particle                     e+
+/gate/source/F18_1/gps/energytype                   Fluor18
+/gate/source/F18_1/setActivity                      10 MBq
+/gate/source/F18_1/setForcedUnstableFlag            true
+/gate/source/F18_1/setForcedHalfLife                6586 s
+/gate/source/F18_1/gps/ang/type                      iso
+#/gate/source/F18_1/gps/centre 0 0 0 cm
+#/gate/source/F18_1/visualize red
+
+/gate/source/list
+
+/gate/source/F18_1/attachTo     Source
+
+#-------------------oooooOOOOO00000OOOOOooooo---------------------#
+##                                                                 #
+#                   D E F I N I T I O N   O F                     #
+#                Y O U R   O U T P U T   F I L E                  #
+#                                                                 #
+#-------------------oooooOOOOO00000OOOOOooooo---------------------#
+
+#=====================================================
+#  D A T A   O U T P U T   
+#=====================================================
+
+/gate/random/setEngineSeed 123456789
+
+#/gate/output/root/disable
+#/gate/output/root/setFileName               output/Mouse_
+#/gate/output/root/setRootNtupleFlag         0
+#/gate/output/root/setRootHitFlag            0
+#/gate/output/root/setRootSinglesFlag        0
+#/gate/output/root/setRootSinglesAdderFlag   0
+#/gate/output/root/setRootSinglesReadoutFlag 0
+#/gate/output/root/setRootCoincidencesFlag   1
+#/gate/output/root/setRootdelayFlag          0
+#/gate/output/root/setSingleMask 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+
+/gate/output/ascii/enable
+/gate/output/ascii/setFileName                    output/Mouse_
+/gate/output/ascii/setOutFileHitsFlag           0
+/gate/output/ascii/setOutFileSinglesFlag        0
+/gate/output/ascii/setOutFileCoincidencesFlag   1
+/gate/output/ascii/setCoincidenceMask 0 0 0 0 0 0 1 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 
+#                               run evnt src srcX srcY srcZ V1-V6 tms Erg sinX sinY sinZ cptPhan cptDect rgPhan rgDetec Name1 Name2
+#/gate/output/ascii/setSingleMask 0 0 0 0 0 0 0 1 0 1 1 1 0 1 0 0 0 0 0 0
+#/gate/output/ascii/setSingleMask 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+
+
