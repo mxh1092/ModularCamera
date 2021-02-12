@@ -39,11 +39,11 @@
 #   M E A S U R E M E N T   S E T T I N G S   
 #=====================================================
 
-/gate/application/setTotalNumberOfPrimaries 30
+#/gate/application/setTotalNumberOfPrimaries 30
 
-#/gate/application/setTimeSlice     0.01 s
-#/gate/application/setTimeStart     0   s
-#/gate/application/setTimeStop      0.1  s
+/gate/application/setTimeSlice     0.01 s
+/gate/application/setTimeStart     0   s
+/gate/application/setTimeStop      0.1  s
 #
 /gate/application/startDAQ
 

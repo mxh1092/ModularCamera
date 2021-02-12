@@ -13,7 +13,7 @@
 /vis/open                           OGL
 /vis/viewer/reset
 #/vis/viewer/set/viewpointThetaPhi   120 30
-/vis/viewer/set/viewpointThetaPhi 30 30
+/vis/viewer/set/viewpointThetaPhi 90 0
 #/vis/viewer/set/viewpointThetaPhi   0 0
 /vis/viewer/zoom                    1
 /vis/viewer/set/style surface
@@ -69,7 +69,7 @@
 /gate/module/geometry/setXLength 35. cm
 /gate/module/geometry/setYLength 9.5 cm
 /gate/module/geometry/setZLength 45. cm
-/gate/module/placement/setTranslation  0. -150. -475. mm
+/gate/module/placement/setTranslation  0. 0. 0. mm
 /gate/module/vis/forceWireframe
 /gate/module/vis/setColor        red
 /gate/module/vis/setVisible                 1
@@ -161,7 +161,7 @@
 #   R E P E A T    M O D U L E
 
 /gate/module/repeaters/insert genericRepeater
-/gate/module/genericRepeater/useRelativeTranslation 1
+#/gate/module/genericRepeater/useRelativeTranslation 1
 /gate/module/genericRepeater/setPlacementsFilename data/square_geom_simple.placements
 
 

@@ -13,7 +13,7 @@
 /gate/phantom/geometry/setThetaStart            0 deg
 /gate/phantom/geometry/setDeltaTheta            360 deg
 
-/gate/phantom/placement/setTranslation          0 -150 0 mm
+/gate/phantom/placement/setTranslation          0 0 0 mm
 /gate/phantom/moves/insert                      translation
 /gate/phantom/translation/setSpeed              0 0 0 cm/s
 
